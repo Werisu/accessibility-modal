@@ -1,19 +1,36 @@
-import { Injectable } from "@angular/core";
+import { ModalComponent } from './../modal.component';
+import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Injectable, Injector } from "@angular/core";
 import { ModalConfig } from "../interfaces/modal-config";
 
 @Injectable()
 export class ModalService {
 
-  public open(config: ModalConfig): ModalRef{
-    console.log('open called');
-    return new ModalRef();
+  private componentFactory!: ComponentFactory<ModalComponent>;
+
+  constructor(componetFactoryResolver: ComponentFactoryResolver, private injector: Injector) {
+    this.componentFactory = componetFactoryResolver.resolveComponentFactory(ModalComponent);
   }
 
+  public open(config: ModalConfig): ModalRef{
+    const componentRef = this.createComponentRef();
+    componentRef.instance.config = config;
+    console.log('open called');
+    return new ModalRef(componentRef);
+  }
+
+  private createComponentRef(): ComponentRef<ModalComponent>{
+    return this.componentFactory.create(this.injector);
+  }
 }
 
 export class ModalRef {
+
+  constructor(private componentRef: ComponentRef<ModalComponent>) {
+
+  }
+
   public close ():void {
     console.log('close called');
-
+    this.componentRef.destroy();
   }
 }
