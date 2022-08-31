@@ -27,7 +27,7 @@ export class FocusTrapDirective implements AfterViewInit {
   // o decorator HostListener permite ouvir eventos a apartir do elemento host
   @HostListener('keydown', ['$event'])
   public manageTab(event: KeyboardEvent): void{
-    console.log(event);
+    // console.log(event);
 
     if(event.key !== 'Tab'){
       return;
