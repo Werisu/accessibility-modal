@@ -2,7 +2,8 @@
 class="modal-overlay"
 (click)="modalRef.close()"
 >
-  <div class="modal-content">
+  <div class="modal-content"
+    (click)="$event.stopPropagation()">
     <h1 class="modal-title">{{ config.title }}</h1>
     <ng-container *ngTemplateOutlet="config.templateRef"></ng-container>
   </div>
