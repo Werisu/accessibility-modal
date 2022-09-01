@@ -1,4 +1,32 @@
-# Accessibility2
+# Accessibility-modal
+
+## Angular: avançando no design de componentes com acessibilidade
+
+Foi desenvolvido uma API modal do zero aplicando regras de acessibilidade da WCAG. Neste projeto também foi aplicado conceitos para criar componentes dinamicamente, diretivas e animações com o módulo Animations.
+
+No projeto:
+
+* API Modal
+* Injetando templates
+* Injeção de ng-template
+* Minimizando as dependências do componente
+* Dependências de uma classe
+* Modal COmponent
+* ngTemplateOutlet
+* ComponentFactoryResolver
+* ComponentRef vs ModalRef
+* z-index e stacking order
+* BodyInjector
+* ApplicationRef
+* AttachView
+* Hostview
+* EmbeddedViewRef
+* Animation
+* Acessibilidade
+* A diretiva FocusTrap
+* HostListener
+* document.activeElement
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
 
